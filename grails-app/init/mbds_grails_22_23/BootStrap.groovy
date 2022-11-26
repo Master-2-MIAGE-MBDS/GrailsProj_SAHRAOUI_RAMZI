@@ -15,6 +15,7 @@ class BootStrap {
 //ajouter un role client
         def Userin = new User(username: "user",password: "user").save()
 
+
         def userole1 = new Role(authority: "ROLE_CLIENT").save()
 
         UserRole.create(Userin,userole1, true)
