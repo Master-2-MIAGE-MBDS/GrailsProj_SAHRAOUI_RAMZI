@@ -3,7 +3,7 @@
     <head>
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'user.label', default: 'User')}" />
-        <h1>testf</h1>
+        <h1>testf1</h1>
 
         <asset:stylesheet src="application.css "/>
 </head>
