@@ -12,7 +12,7 @@ class BootStrap {
         def adminUserInstance = new User(username: "admin",password: "admin").save()
         def adminRole = new Role(authority: "ROLE_ADMIN").save()
         UserRole.create(adminUserInstance, adminRole, true)
-
+//test github
 
 
 
