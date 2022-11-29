@@ -87,7 +87,43 @@ class AnnonceController {
         }
         try {
 
+            request.multipartFiles.eachWithIndex {
 
+                def mfile, int index ->
+
+                    def filetest = request.getFile(mfile.key)
+
+                    flash.message = filetest
+
+                    String charset = (('A'..'Z') + ('0'..'9')).join()
+
+                    Integer length = 9
+
+                    String randomString = RandomStringUtils.random(length, charset.toCharArray())
+
+                    def file = new File('C:\\Users\\admin\\Desktop\\MBDS\\mbds-grails-22-23-main\\grails-app\\assets\\images\\'+randomString +'.jpg')
+
+                    filetest.transferTo(file)
+
+                    flash.message = file
+
+
+
+                    annonce.addToIllustrations(new Illustration( file.getName()))
+
+            }
+
+            annonce.title = params.title
+
+            annonce.description = params.description
+
+
+
+            annonce.price = Float.parseFloat(params.price)
+
+
+
+            annonceService.save(annonce)
         }
 
 
