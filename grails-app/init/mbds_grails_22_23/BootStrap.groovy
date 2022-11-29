@@ -23,7 +23,7 @@ class BootStrap {
         def  administer= new User (username: "admin1",password:"pass" ).save()
         UserRole.create(administer, adminRole,true)
         // On boucle sur une liste de 5 prénoms
-        ["AlicEWEwe", "Bobb", "Charly", "Denis", "Etienne"].each {
+        ["AlicEWEwe", "Boobb", "Charly", "Denis", "Etienne"].each {
             String username ->
                 // On crée les utilisateurs associés
                 def userInstance = new User(username: username, password: "password")
