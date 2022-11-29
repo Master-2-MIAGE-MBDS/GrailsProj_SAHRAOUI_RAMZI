@@ -3,7 +3,10 @@ package com.mbds.grails
 import grails.plugin.springsecurity.annotation.Secured
 import grails.validation.ValidationException
 import static org.springframework.http.HttpStatus.*
-@Secured('ROLE_ADMIN')
+import org.apache.commons.lang.RandomStringUtils
+import  java.io.File;
+
+@Secured(['ROLE_ADMIN' , 'ROLE_CLIENT'])
 class AnnonceController {
 
     AnnonceService annonceService
@@ -20,21 +23,49 @@ class AnnonceController {
     }
 
     def create() {
-        respond new Annonce(params)
+
+        respond new Annonce(params), model: [userList: User.list()]
     }
+
 
     def save(Annonce annonce) {
         if (annonce == null) {
             notFound()
             return
         }
-
         try {
+
+            def user = User.get(params.author)
+
+            request.multipartFiles.eachWithIndex {
+                def mfile, int index ->
+                    def filetest = request.getFile('filename'+index)
+                    flash.message = filetest
+                    String charset = (('A'..'Z') + ('0'..'9')).join()
+                    Integer length = 9
+                    String randomString = RandomStringUtils.random(length, charset.toCharArray())
+                    def file = new File('C:\\Users\\admin\\Desktop\\MBDS\\mbds-grails-22-23-main\\grails-app\\assets\\images\\'+randomString +'.jpg')
+                    filetest.transferTo(file)
+                    flash.message = file
+
+                    annonce.addToIllustrations(new Illustration(filename: file.getName()))
+            }
             annonceService.save(annonce)
+            user.addToAnnonces(annonces: annonce)
+            user.save(flush: true, failOnError: true)
+
         } catch (ValidationException e) {
-            respond annonce.errors, view:'create'
+            respond annonce.errors, view: 'create'
             return
         }
+
+
+
+
+
+
+
+
 
         request.withFormat {
             form multipartForm {
@@ -54,10 +85,14 @@ class AnnonceController {
             notFound()
             return
         }
-
         try {
-            annonceService.save(annonce)
-        } catch (ValidationException e) {
+
+
+        }
+
+
+
+        catch (ValidationException e) {
             respond annonce.errors, view:'edit'
             return
         }
