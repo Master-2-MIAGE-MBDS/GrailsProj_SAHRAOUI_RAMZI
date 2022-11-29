@@ -32,7 +32,7 @@ class BootStrap {
                     Integer index ->
                         // Pour ajouter 5 annonces par utilisateur
                         def annonceInstance = new Annonce(title: username + " " + index, description: "Description de l'annonce", price: 10 * index, active: Boolean.TRUE)
-                        (1..6).each {
+                        (1..5).each {
                             // Et enfin 5 illustrations par annonce
                             annonceInstance.addToIllustrations(new Illustration(filename: "grails.svg"))
                         }
