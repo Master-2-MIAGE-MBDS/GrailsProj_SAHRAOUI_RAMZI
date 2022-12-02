@@ -2,6 +2,8 @@ package com.mbds.grails
 
 import grails.plugin.springsecurity.annotation.Secured
 import grails.validation.ValidationException
+import org.apache.commons.lang.RandomStringUtils
+
 import static org.springframework.http.HttpStatus.*
 @Secured(['ROLE_ADMIN' , 'ROLE_CLIENT'])
 
@@ -31,7 +33,12 @@ class IllustrationController {
         }
 
         try {
+            //illustrationService.save(illustration)
+
+
             illustrationService.save(illustration)
+
+
         } catch (ValidationException e) {
             respond illustration.errors, view:'create'
             return
@@ -55,10 +62,12 @@ class IllustrationController {
             notFound()
             return
         }
-
         try {
-            illustrationService.save(illustration)
-        } catch (ValidationException e) {
+             illustrationService.save(illustration)
+
+        }
+
+         catch (ValidationException e) {
             respond illustration.errors, view:'edit'
             return
         }

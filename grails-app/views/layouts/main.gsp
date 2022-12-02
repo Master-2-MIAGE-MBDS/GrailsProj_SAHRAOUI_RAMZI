@@ -79,8 +79,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     <div class="navbar">
-        <a href="http://localhost:8081/illustration/index">Illustration</a>
-        <a href="http://localhost:8081/annonce/index">Annonce</a>
+
+        <div class="dropdown">
+            <button class="dropbtn"  onclick="window.location.href='http://localhost:8081/Annonce/index'">Annonce
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="http://localhost:8081/Annonce/create">Création nouvelle Annonce</a>
+                <a href="http://localhost:8081/Annonce/index">Lister les Annonces</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="dropdown">
+            <button class="dropbtn" onclick="window.location.href='http://localhost:8081/Illustration/index'">Illustration
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="http://localhost:8081/illustration/create">Création nouvelle Illustration</a>
+                <a href="http://localhost:8081/illustration/index">Lister les Illustrations</a>
+
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
         <div class="dropdown">
             <button class="dropbtn">User
                 <i class="fa fa-caret-down"></i>
@@ -92,6 +123,14 @@
             </div>
 
         </div>
+
+
+
+
+
+
+
+
         <a id="log" href="http://localhost:8081/logout">Log out</a>
     </div>
 <body>

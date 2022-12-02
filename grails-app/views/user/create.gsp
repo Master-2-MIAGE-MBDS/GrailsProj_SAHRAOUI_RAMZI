@@ -4,13 +4,14 @@
 
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'user.label', default: 'User')}" />
+
         <title><g:message code="default.create.label" args="[entityName]" /></title>
         <asset:stylesheet src="application.css"/>
     </head>
 <style>
 
 </style>
-    <body>
+    <body class="bd">
 
 
         <div id="create-user" class="content scaffold-create" role="main">
@@ -26,28 +27,25 @@
             </ul>
             </g:hasErrors>
             <g:form resource="${this.user}" method="POST">
-                <fieldset class="form">
+
                     <fieldset class="form">
                         <div class="fieldcontain required">
-                             <div class="form__group field">
-  <input type="input" class="form__field" placeholder="Nom de utilisateur" name="username" id='name' required />
-  <label for="name" class="form__label">Nom de utilisateur</label>
+                             <div class="form__group field"><br><br>
+  <input type="text" class="un" placeholder="Nom de utilisateur" name="username" id='name' required /> <br><br>
+
 </div>
                   <div class="form__group field">
-  <input type="input" class="form__field" placeholder="Password" name="password" id='password' required />
-  <label for="name" class="form__label">Password</label>
+  <input type="text" class="pass" placeholder="Password" name="password" id='password' required /><br><br>
+
 </div>
-                  Role <g:select     id="type" name="roleList" optionKey="id" optionValue="authority"
-                                     optionkey="id"    from="${roleList}" >
+                 <g:select     id="type" name="roleList" optionKey="id" optionValue="authority"
+                                     optionkey="id"    from="${roleList}" ><br><br>
 
                 </g:select>
-                        </div><div class="fieldcontain required">
+                        </div><div class="fieldcontain required"><br><br>
 
 
-                <fieldset class="buttons">
-                    <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
-                </fieldset>
-            </g:form>
+                <input type="submit" name="create" class="save" value="Create" id="create">    </g:form>
         </div>
     </body>
 </html>

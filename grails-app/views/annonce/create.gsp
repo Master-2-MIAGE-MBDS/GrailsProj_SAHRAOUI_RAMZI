@@ -1,23 +1,14 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-        <meta name="layout" content="main" />
+           <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'annonce.label', default: 'Annonce')}" />
         <title><g:message code="default.create.label" args="[entityName]" /></title>
+
     </head>
     <body>
-        <a href="#create-annonce" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-        <div class="nav" role="navigation">
-            <ul>
-                <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-                <li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-            </ul>
-        </div>
+
+
         <div id="create-annonce" class="content scaffold-create" role="main">
             <h1><g:message code="default.create.label" args="[entityName]" /></h1>
             <g:if test="${flash.message}">
@@ -30,14 +21,47 @@
                 </g:eachError>
             </ul>
             </g:hasErrors>
-            <g:form resource="${this.annonce}" method="POST">
+
+            <g:uploadForm resource="${this.annonce}" method="POST" >
+
+
+
                 <fieldset class="form">
-                    <f:all bean="annonce"/>
-                </fieldset>
-                <fieldset class="buttons">
+
+                        <div class="fieldcontain required">
+                            <input type="text" name="title" class="un" value="" required="" maxlength="100" id="title" placeholder="Titre">
+                        </div><div class="fieldcontain required">
+                         <input type="text" name="description"  class="un"  value="" required="" id="description" placeholder="Descirption">
+                    </div><div class="fieldcontain required">
+
+                            <input type="number decimal" name="price" class="un" value="" required="" step="0.01" min="0.0" id="price" placeholder="Prix">
+                    </div><div class="fieldcontain">
+
+                    </div><div class="fieldcontain">
+                    <div id="dropContainer" class="un" style="border:1px solid black;height:100px;"  >
+                        Drop Here
+                    </div>
+                    <input class="un" type="file" name="filename0" value="" required="" id="fileInput"
+                           placeholder="Entrez un nom de fichier">
+
+
+
+                    <div class="form-group">
+                        <g:select class="un" from="${com.mbds.grails.User.list()}"
+                                  name="author" id='author' optionKey="id" optionValue="username"/> </div>
+                    </div>
+
                     <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
+
                 </fieldset>
-            </g:form>
+
+
+
+
+            </g:uploadForm>
         </div>
     </body>
+
+
+
 </html>

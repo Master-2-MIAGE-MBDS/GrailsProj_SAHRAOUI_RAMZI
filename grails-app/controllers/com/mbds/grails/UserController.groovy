@@ -33,7 +33,7 @@ class UserController {
         }
         try{
             def role = Role.get(params.roleList)
-            userService.save(user)
+            userService.save(user   )
             UserRole.create(user , role, true)
         }
          catch (ValidationException e) {

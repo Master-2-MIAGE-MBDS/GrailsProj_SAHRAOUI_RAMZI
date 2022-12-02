@@ -1,6 +1,51 @@
+#tablei{
+    margin-left:490px;
+}
+.formu {
+
+height: 400px}
+.formshow   {
+margin-left: 170px;
+
+}
+.fiel {
+height: 10px;
+    border: 0px;
+}
+.fimage{
+    margin-left:400px;
+
+}
+fieldset  {
+margin-left: 460px;
+ width:390px;
+    height: 500px;
+
+    color: black;
+
+}
+#dropContainer {
+    height: 0px;
+
+}
+.save {
+    cursor: pointer;
+    border-radius: 5em;
+    color: #fff;
+    background: linear-gradient(to right, #9C27B0, #E040FB);
+    border: 0;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-family: 'Ubuntu', sans-serif;
+    margin-left: 35%;
+    font-size: 13px;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);}
 table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
+    margin-left: 250px;
 }
 
 th, td {
@@ -10,7 +55,9 @@ th, td {
 
 }
 thead{
-    background-color: orange;
+    background: linear-gradient(to right, #9C27B0, #E040FB);
+    color: white;
+    margin-left: 100px;
 }
 
 tr:hover {background-color: #D6EEEE;}
@@ -18,44 +65,56 @@ h1{
     text-align: center;
 }
 #type {
-    width: 100%;
+    width: 50%;
     padding: 16px 20px;
     border: none;
     border-radius: 4px;
-    background-color: #f1f1f1;
+    background-color: white;
+    margin-left: 90px;
+    color: black;
 }
-$primary: #11998e;
-$secondary: #38ef7d;
-$white: #fff;
-$gray: #9b9b9b;
-.form__group {
-    position: relative;
-    padding: 15px 0 0;
-    margin-top: 10px;
-    width: 50%;
+.pass {
+    width: 76%;
+    color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgba(136, 126, 126, 0.04);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    margin-bottom: 50px;
+    margin-left: 46px;
+    text-align: center;
+    margin-bottom: 27px;
+    font-family: 'Ubuntu', sans-serif;
 }
 
-.form__field {
-    font-family: inherit;
-    width: 100%;
-    border: 0;
-    border-bottom: 2px solid $gray;
-    outline: 0;
-    font-size: 1.3rem;
-    color: $white;
-    padding: 7px 0;
-    background: transparent;
-    transition: border-color 0.2s;
 
-&::placeholder {
-     color: transparent;
- }
-
-&:placeholder-shown ~ .form__label {
-     font-size: 1.3rem;
-     cursor: text;
-     top: 20px;
- }
+#idadd {
+margin-left: 100px;
+}
+.un  {
+    width: 76%;
+    color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgba(136, 126, 126, 0.04);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    margin-bottom: 50px;
+    margin-left: 46px;
+    text-align: center;
+    margin-bottom: 27px;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 .form__label {
@@ -64,7 +123,7 @@ $gray: #9b9b9b;
     display: block;
     transition: 0.2s;
     font-size: 1rem;
-    color: $gray;
+
 }
 
 .form__field:focus {
@@ -77,5 +136,7 @@ $gray: #9b9b9b;
     color: $primary;
     font-weight:700;
 }
- 
-/* demo */
+
+
+}
+}

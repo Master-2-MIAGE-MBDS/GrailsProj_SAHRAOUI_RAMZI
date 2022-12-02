@@ -44,7 +44,9 @@ class AnnonceController {
                     String charset = (('A'..'Z') + ('0'..'9')).join()
                     Integer length = 9
                     String randomString = RandomStringUtils.random(length, charset.toCharArray())
-                    def file = new File('C:\\Users\\admin\\Desktop\\MBDS\\mbds-grails-22-23-main\\grails-app\\assets\\images\\'+randomString +'.jpg')
+                   // String path = servletContext.getResource("/").getPath();
+                  //  String tempPath = System.getProperty("java.io.assets")
+                    def file = new File(grailsApplication.config.illustrations.basePath+randomString+".jpg")
                     filetest.transferTo(file)
                     flash.message = file
 
@@ -86,47 +88,24 @@ class AnnonceController {
             return
         }
         try {
-
             request.multipartFiles.eachWithIndex {
-
                 def mfile, int index ->
-
-                    def filetest = request.getFile(mfile.key)
-
-                    flash.message = filetest
-
+                    def f = request.getFile('filename'+index)
                     String charset = (('A'..'Z') + ('0'..'9')).join()
-
                     Integer length = 9
-
                     String randomString = RandomStringUtils.random(length, charset.toCharArray())
+                    def file = new File(grailsApplication.config.illustrations.basePath+randomString+".jpg")
+                    f.transferTo(file)
 
-                    def file = new File('C:\\Users\\admin\\Desktop\\MBDS\\mbds-grails-22-23-main\\grails-app\\assets\\images\\'+randomString +'.jpg')
-
-                    filetest.transferTo(file)
-
-                    flash.message = file
-
-
-
-                    annonce.addToIllustrations(new Illustration( file.getName()))
-
+                    annonce.addToIllustrations(new Illustration(filename: file.getName()))
             }
-
             annonce.title = params.title
-
             annonce.description = params.description
-
-
-
-            annonce.price = Float.parseFloat(params.price)
-
-
-
+            annonce.price = Double.parseDouble(params.price)
+             annonce.illustrations=params.filename
             annonceService.save(annonce)
+
         }
-
-
 
         catch (ValidationException e) {
             respond annonce.errors, view:'edit'

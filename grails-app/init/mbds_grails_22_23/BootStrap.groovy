@@ -28,11 +28,11 @@ class BootStrap {
                 // On crée les utilisateurs associés
                 def userInstance = new User(username: username, password: "password")
                 // Pour chaque utilisateur on boucle 5 fois
-                (1..5).each {
+                (1..2).each {
                     Integer index ->
                         // Pour ajouter 5 annonces par utilisateur
                         def annonceInstance = new Annonce(title: username + " " + index, description: "Description de l'annonce", price: 10 * index, active: Boolean.TRUE)
-                        (1..8).each {
+                        (1..2).each {
                             // Et enfin 5 illustrations par annonce
                             annonceInstance.addToIllustrations(new Illustration(filename: "grails.svg"))
                         }
