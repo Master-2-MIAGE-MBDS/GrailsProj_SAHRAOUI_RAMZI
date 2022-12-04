@@ -77,7 +77,7 @@ Concernant le client , il ne peut ni gérer ni avoir la main sur la gestion des 
 
 </p>
 
-# créer une Annonce
+# créer une Annonce.
 
 <p>
 
