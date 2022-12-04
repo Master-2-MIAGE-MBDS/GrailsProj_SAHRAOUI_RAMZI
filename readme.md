@@ -41,7 +41,7 @@ Concernant le client , il ne peut ni gérer ni avoir la main sur la gestion des 
 
 <p>
 
-<img src="images/login.png" width="850" height="450">
+<img src="images/login.png" width="1280" height="599">
 
 </p>
 
@@ -49,7 +49,22 @@ Concernant le client , il ne peut ni gérer ni avoir la main sur la gestion des 
 
 <p>
 
-<img src="images/home.jpeg" width="700" height="500">
+<img src="images/home.jpeg" width="871" height="1280">
+
+</p>
+
+# les utilisateurs
+
+<p>
+
+<img src="images/show-user.jpeg" width="1280" height="595">
+
+</p>
+
+
+<p>
+
+<img src="images/users.jpeg" width="1280" height="595">
 
 </p>
 
