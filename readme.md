@@ -21,8 +21,11 @@ il faut changer le path des images qui correspond à votre local pour n’avoir 
 après leur insertion , et c’est à partir du fichier "grails-app[main]/conf/spring/application.yml" ou vous allez trouver le basePath pour les illustrations:
 # Langage,programmes  et ressources 
 groovy(back-end) 
+#
 HTML,CSS (front-end)
+#
 Intellij (IDE de travail)
+#
 Spring Security
 # Besoins fonctionnels 
 
