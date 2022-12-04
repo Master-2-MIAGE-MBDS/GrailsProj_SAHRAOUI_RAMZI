@@ -13,7 +13,7 @@
         font-family: Arial, Helvetica, sans-serif;
     }
     #log{
-       margin-left: 980px;
+       margin-left: 900px;
     }
 
     .navbar {
@@ -33,8 +33,16 @@
     .dropdown {
         float: left;
         overflow: hidden;
-    }
 
+    }
+    #usercheck{
+        margin-left: 820px;
+      
+    }
+    img{
+        margin-top: -30px;
+        font-size: 10px;
+    }
     .dropdown .dropbtn {
         font-size: 16px;
         border: none;
@@ -47,9 +55,13 @@
     }
 
     .navbar a:hover, .dropdown:hover .dropbtn {
-        background-color: red;
+        background: linear-gradient(to right, #9C27B0, #E040FB);
     }
 
+
+    h1:hover{
+        background: linear-gradient(to right, #9C27B0, #E040FB);
+    }
     .dropdown-content {
         display: none;
         position: absolute;
@@ -79,7 +91,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     <div class="navbar">
+        <div class="dropdown">
+            <button class="dropbtn"  onclick="window.location.href='http://localhost:63342/mbds_grails_22_23/mbds_grails_22_23.main/home/index.html?_ijt=lae3op8v276k1njf01mk6rs5h3'">Home
+                <i class="fa fa-caret-down"></i>
+            </button>
 
+
+        </div>
         <div class="dropdown">
             <button class="dropbtn"  onclick="window.location.href='http://localhost:8081/Annonce/index'">Annonce
                 <i class="fa fa-caret-down"></i>
@@ -112,7 +130,7 @@
 
 
 
-        <div class="dropdown">
+        <div class="dropdown" >
             <button class="dropbtn">User
                 <i class="fa fa-caret-down"></i>
             </button>
@@ -124,15 +142,33 @@
 
         </div>
 
+        <div class="dropdown" id="usercheck" >
+
+            <button class="dropbtn"><img src="https://img.icons8.com/ios-filled/50/FFFFFF/user.png" height="25px">  <sec:loggedInUserInfo field="username" class="log" />
+
+            </button>
+            <div class="dropdown-content">
+                <sec:ifLoggedIn>
+                    <a id="" href="http://localhost:8081/logout"  > Log out !</a>
+
+
+                </sec:ifLoggedIn>
+                <sec:ifNotLoggedIn  >
+                    <a id="" href="http://localhost:8081/login/auth"> Log in ! </a>
+                </sec:ifNotLoggedIn>
+            </div>
+
+        </div>
 
 
 
 
 
 
-
-        <a id="log" href="http://localhost:8081/logout">Log out</a>
     </div>
+
+
+
 <body>
 
 </body>
@@ -142,7 +178,7 @@
     <div class="footer" role="contentinfo"></div>
 
     <div id="spinner" class="spinner" style="display:none;">
-        <g:message code="spinner.alt" default="Loading&hellip;"/>
+        <g:message  default="Loading&hellip;"/>
     </div>
 
     <asset:javascript src="application.js"/>

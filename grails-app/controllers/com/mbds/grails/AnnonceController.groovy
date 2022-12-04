@@ -40,7 +40,7 @@ class AnnonceController {
             request.multipartFiles.eachWithIndex {
                 def mfile, int index ->
                     def filetest = request.getFile('filename'+index)
-                    flash.message = filetest
+
                     String charset = (('A'..'Z') + ('0'..'9')).join()
                     Integer length = 9
                     String randomString = RandomStringUtils.random(length, charset.toCharArray())
@@ -48,17 +48,25 @@ class AnnonceController {
                   //  String tempPath = System.getProperty("java.io.assets")
                     def file = new File(grailsApplication.config.illustrations.basePath+randomString+".jpg")
                     filetest.transferTo(file)
-                    flash.message = file
+
 
                     annonce.addToIllustrations(new Illustration(filename: file.getName()))
             }
             annonceService.save(annonce)
             user.addToAnnonces(annonces: annonce)
             user.save(flush: true, failOnError: true)
+            request.withFormat {
+                form multipartForm {
+                    flash.message = message(code: 'default.created.message', args: [message( default: 'Annonces'), annonces.id])
+                    redirect annonce
+                }
+                '*' { respond annonce, [status: CREATED] }
+            }
 
         } catch (ValidationException e) {
             respond annonce.errors, view: 'create'
             return
+
         }
 
 
@@ -71,7 +79,7 @@ class AnnonceController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'annonce.label', default: 'Annonce'), annonce.id])
+                flash.message = message(code: 'default.created.message', args: [message( default: 'Annonce'), annonce.id])
                 redirect annonce
             }
             '*' { respond annonce, [status: CREATED] }
@@ -101,7 +109,7 @@ class AnnonceController {
             }
             annonce.title = params.title
             annonce.description = params.description
-            annonce.price = Double.parseDouble(params.price)
+            annonce.price = Float.parseFloat(params.price)
              annonce.illustrations=params.filename
             annonceService.save(annonce)
 
@@ -114,7 +122,7 @@ class AnnonceController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'annonce.label', default: 'Annonce'), annonce.id])
+                flash.message = message(code: 'default.updated.message', args: [message( default: 'Annonce'), annonce.id])
                 redirect annonce
             }
             '*'{ respond annonce, [status: OK] }
@@ -131,7 +139,7 @@ class AnnonceController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.deleted.message', args: [message(code: 'annonce.label', default: 'Annonce'), id])
+                flash.message = message(code: 'default.deleted.message', args: [message( default: 'Annonce'), id])
                 redirect action:"index", method:"GET"
             }
             '*'{ render status: NO_CONTENT }
@@ -141,7 +149,7 @@ class AnnonceController {
     protected void notFound() {
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.not.found.message', args: [message(code: 'annonce.label', default: 'Annonce'), params.id])
+                flash.message = message(code: 'default.not.found.message', args: [message( default: 'Annonce'), params.id])
                 redirect action: "index", method: "GET"
             }
             '*'{ render status: NOT_FOUND }

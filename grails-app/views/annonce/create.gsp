@@ -2,7 +2,7 @@
 <html>
     <head>
            <meta name="layout" content="main" />
-        <g:set var="entityName" value="${message(code: 'annonce.label', default: 'Annonce')}" />
+        <g:set var="entityName" value="${message( default: 'Annonce')}" />
         <title><g:message code="default.create.label" args="[entityName]" /></title>
 
     </head>
@@ -38,7 +38,7 @@
                     </div><div class="fieldcontain">
 
                     </div><div class="fieldcontain">
-                    <div id="dropContainer" class="un" style="border:1px solid black;height:100px;"  >
+                    <div id="dropContainer" class="un" style=""  >
                         Drop Here
                     </div>
                     <input class="un" type="file" name="filename0" value="" required="" id="fileInput"

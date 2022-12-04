@@ -44,13 +44,7 @@ class IllustrationController {
             return
         }
 
-        request.withFormat {
-            form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'illustration.label', default: 'Illustration'), illustration.id])
-                redirect illustration
-            }
-            '*' { respond illustration, [status: CREATED] }
-        }
+
     }
 
     def edit(Long id) {
@@ -72,13 +66,7 @@ class IllustrationController {
             return
         }
 
-        request.withFormat {
-            form multipartForm {
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'illustration.label', default: 'Illustration'), illustration.id])
-                redirect illustration
-            }
-            '*'{ respond illustration, [status: OK] }
-        }
+
     }
 
     def delete(Long id) {
@@ -87,21 +75,21 @@ class IllustrationController {
             return
         }
 
-        illustrationService.delete(id)
+        def illustration = Illustration.get(id)
+        def annnonceid = illustration.annonce.id
+        def filename = illustration.filename
+        def file = new File(grailsApplication.config.illustrations.baseUrl + filename)
+        file.delete()
+        illustration.delete(flush: true)
 
-        request.withFormat {
-            form multipartForm {
-                flash.message = message(code: 'default.deleted.message', args: [message(code: 'illustration.label', default: 'Illustration'), id])
-                redirect action:"index", method:"GET"
-            }
-            '*'{ render status: NO_CONTENT }
-        }
+
+        redirect controller:"annonce", id:annnonceid ,action:"edit", method:"GET"
     }
 
     protected void notFound() {
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.not.found.message', args: [message(code: 'illustration.label', default: 'Illustration'), params.id])
+                flash.message = message(code: 'default.not.found.message', args: [message( default: 'Illustration'), params.id])
                 redirect action: "index", method: "GET"
             }
             '*'{ render status: NOT_FOUND }

@@ -2,15 +2,14 @@
 <html>
     <head>
        <meta name="layout" content="main" />
-        <g:set var="entityName" value="${message(code: 'annonce.label', default: 'Annonce')}" />
-        <title><g:message code="default.show.label" args="[entityName]" /></title>
+         <title><g:message code="default.show.label" args="[entityName]" /></title>
     </head>
 <body>
 <div class="nav" role="navigation">
 
 </div>
 <div id="show-annonce" class="content scaffold-show" role="main">
-    <h1><g:message code="default.show.label" args="[entityName]" /></h1>
+    <h1> Voir l'annonce </h1>
     <g:if test="${flash.message}">
         <div class="message" role="status">${flash.message}</div>
     </g:if>
@@ -29,12 +28,12 @@
     </section>
 
 
-    <g:form resource="${this.annonce}" method="DELETE">
-        <fieldset class="fiel">
-            <g:link class="save" action="edit" resource="${this.annonce}"> Modifier</g:link> <br><br>
-            <input class="save" type="submit" value="Supprimer" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
+    <g:form resource="${this.annonce}" method="DELETE" >
 
-        </fieldset>
+            <g:link class="save1" style="margin-left: 550px" action="edit" resource="${this.annonce}"> Modifier</g:link>
+            <input class="save1"    type="submit" value="Supprimer" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
+
+
 
     </g:form>
 </div>

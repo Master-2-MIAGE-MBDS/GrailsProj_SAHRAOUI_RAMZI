@@ -2,30 +2,46 @@
 <html>
     <head>
         <meta name="layout" content="main" />
-        <g:set var="entityName" value="${message(code: 'user.label', default: 'User')}" />
-        <title><g:message code="default.show.label" args="[entityName]" /></title>
+
     </head>
-    <body>
-        <a href="#show-user" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-        <div class="nav" role="navigation">
-            <ul>
-                <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-                <li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-                <li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
-            </ul>
-        </div>
-        <div id="show-user" class="content scaffold-show" role="main">
-            <h1><g:message code="default.show.label" args="[entityName]" /></h1>
-            <g:if test="${flash.message}">
-            <div class="message" role="status">${flash.message}</div>
-            </g:if>
-            <f:display bean="user" />
-            <g:form resource="${this.user}" method="DELETE">
-                <fieldset class="buttons">
-                    <g:link class="edit" action="edit" resource="${this.user}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
-                    <input class="delete" type="submit" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
-                </fieldset>
-            </g:form>
-        </div>
-    </body>
+<body>
+<div class="nav" role="navigation">
+
+</div>
+<div id="show-annonce" class="content scaffold-show" role="main">
+    <h1>Show User </h1>
+    <g:if test="${flash.message}">
+        <div class="message" role="status">${flash.message}</div>
+    </g:if>
+    <section class="formshow">
+        <input type="text" name="title" disabled="true" class="un" value="Username : ${this.user.username}" required="" maxlength="100" id="title">
+        <input type="text" name="description" disabled="true"  class="un" value=" Mot de passe : ${this.user.password}" required="" maxlength="100" id="description">
+        <select class="un" >
+        <g:each var="listannonce" in="${user.annonces}" >
+
+           <option>
+ANNONCE : ${listannonce.title}
+           </option>
+
+        </g:each> </select>
+        <input type="text" name="price" disabled="true"  class="un" value=" compte enable : ${this.user.enabled}" required="" maxlength="100" id="price">
+        <input type="text" name="author" disabled="true"  class="un" value=" compte verrouillé :${this.user.accountLocked}" required="" maxlength="100" id="author">
+        <input type="text" name="author" disabled="true"  class="un" value=" compte expiré :${this.user.accountExpired}" required="" maxlength="100" id="autho1">
+
+
+
+
+    </section>
+
+
+    <g:form resource="${this.user}" method="DELETE" >
+
+        <g:link class="save1" style="margin-left: 550px" action="edit" resource="${this.user}"> Modifier</g:link>
+        <input class="save1"    type="submit" value="Supprimer" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
+
+
+
+    </g:form>
+</div>
+</body>
 </html>

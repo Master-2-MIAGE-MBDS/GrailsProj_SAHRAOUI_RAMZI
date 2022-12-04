@@ -2,11 +2,10 @@
 <html>
     <head>
               <meta name="layout" content="main" />
-        <g:set var="entityName" value="${message(code: 'annonce.label', default: 'Annonce')}" />
+        <g:set var="entityName" value="${message( default: 'Annonce')}" />
         <title><g:message code="default.edit.label" args="[entityName]" /></title>
     </head>
     <body>
-        <a href="#edit-annonce" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
         <div class="nav" role="navigation">
 
         </div>
@@ -31,8 +30,8 @@
                     </div><div class="fieldcontain required">
                     <input type="text" name="description" class="un"  value=" ${this.annonce.description}"required="" id="description">
                 </div><div class="fieldcontain required">
-                    <input type="number decimal" name="price" class="un"  value=" ${this.annonce.price}" required="" step="0.01" min="0.0" id="price">
-                </div><div class="fieldcontain">
+                    <input  name="price" class="un"  type="number integer"   min="0" step="1" value=" ${this.annonce.price}"   required=""  id="price">
+                 </div><div class="fieldcontain">
 
                 </div> <div class="fieldcontain required">
                       <div class="form-group">
@@ -54,6 +53,7 @@
                     </div>
                 </fieldset>
             </g:form>
+
         </div>
 
     </body>
