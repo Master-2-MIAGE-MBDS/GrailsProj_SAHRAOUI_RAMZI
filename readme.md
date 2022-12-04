@@ -44,11 +44,12 @@ Concernant le client , il ne peut ni gérer ni avoir la main sur la gestion des 
 <img src="images/login.png" width="850" height="450">
 
 </p>
+
 # la page HOME
 
 <p>
 
-<img src="images/home.jpeg" width="850" height="450">
+<img src="images/home.jpeg" width="650" height="350">
 
 </p>
 
