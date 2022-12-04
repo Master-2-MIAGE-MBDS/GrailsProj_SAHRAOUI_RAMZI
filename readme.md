@@ -42,7 +42,7 @@ puis il peut appliquer toute opération voulue du CRUD , il peut également modi
 Concernant le client , il ne peut ni gérer ni avoir la main sur la gestion des utilisateurs
 
 Point de plus : On peut switcher à tout moment l'utilisateur connecté et qui s'affiche en haut 
-de page comme current user avec son rôle
+de page comme current user 
 
 # captures des Besoins 
 
