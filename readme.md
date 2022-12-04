@@ -41,7 +41,7 @@ Concernant le client , il ne peut ni gérer ni avoir la main sur la gestion des 
 
 <p>
 
-<img src="images/login.jpeg" width="250" height="200">
+<img src="images/login.png" width="250" height="200">
 
 </p>
 
