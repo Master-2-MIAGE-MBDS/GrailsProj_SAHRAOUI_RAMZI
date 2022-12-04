@@ -49,7 +49,7 @@ Concernant le client , il ne peut ni gérer ni avoir la main sur la gestion des 
 
 <p>
 
-<img src="images/home.jpeg" width="650" height="350">
+<img src="images/home.jpeg" width="700" height="500">
 
 </p>
 
