@@ -38,8 +38,12 @@ puis il peut appliquer toute opération voulue du CRUD , il peut également modi
 Concernant le client , il ne peut ni gérer ni avoir la main sur la gestion des utilisateurs
 # captures des Besoins 
 # la page du login
-<img src="images/login.jpeg" width="1000">
 
+<p>
+
+<img src="images/login.jpeg" width="250" height="200">
+
+</p>
 
 
 # Critères de notation
