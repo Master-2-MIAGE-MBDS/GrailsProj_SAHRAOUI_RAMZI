@@ -3,19 +3,13 @@
 Etudiante: SAHRAOUI Fatima-Ezzahra :smile:
 Etudiant : RAMZI Mouad :smile:
 
+
+# Encadrement :
+M.Grégory Galli
+
 # Objectifs
 Une platforme qui a comme but d’administrer les annonces, les modifier, les supprimer , 
 en les associant des illustrations sur les quelles on peut appliquer la meme chose c'est à dire tout Operation de CRUD
-
-# Versions
-Version de Grails : 3.3.8
-
-Java : OpenJDK 1.8
-
-Git : version non pertinente
-
-
-
 
 
 # Démarrage
@@ -101,15 +95,16 @@ Concernant le client , il ne peut ni gérer ni avoir la main sur la gestion des 
 <img src="images/show-illustration.jpeg" width="1280" height="595">
 
 </p>
-# Critères de notation
-- **Y a t'il un readme utile et complet ?**
-- Est ce que le code métier est correct, respect des bonnes pratiques, code propre ?
-- Y a t'il des fonctionnalités "bonus" ?
-### Backend
-- Est ce que les interfaces produits ont fait l'objet d'un soin particulier ?
-- Est ce que la segmentation Controller / Service / Modèle a été faite correctement
-- **Est ce que les fonctionnalités minimales sont présentes**
-### API REST
-- **Est ce que tous les points d'entrée sont bien gérés ?**
-- Est ce que les codes d'état HTTP retournés sont bien pertinents ? 
-- **Est ce que la collection Postman est bien présente ?**
+
+# Versions
+Version de Grails : 3.3.8
+
+Java : OpenJDK 1.8
+
+Git : version non pertinente
+
+
+
+
+
+
