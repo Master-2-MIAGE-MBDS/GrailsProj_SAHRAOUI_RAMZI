@@ -24,8 +24,9 @@ il faut changer le path des images qui correspond à votre local pour n’avoir 
 après leur insertion , et c’est à partir du fichier "grails-app[main]/conf/spring/application.yml" ou vous allez trouver le basePath pour les illustrations:
 # Langage,programmes  et ressources 
 groovy(back-end) 
-CSS (front-end)
+HTML,CSS (front-end)
 Intellij (IDE de travail)
+Spring Security
 # Besoins fonctionnels 
 
 On est concernés par 3 utilisateurs qui pourront avoir 3 rôles différents respectivement:
@@ -35,10 +36,14 @@ Apres effectuer son login , l’administrateur peut  Créer ,gérer ,Visualiser 
 alors il peut accéder à chaque annonce à partir d’un tableau qui les regroupe tous (chaque annonce avec l’utilisateur associé) ,
 puis il peut appliquer toute opération voulue du CRUD , il peut également modifier une annonce pour ajouter plus d’illustrations bien sur avec leurs images qui vont être affichées par la suite dans le tableau des annonces après l’actualisation ,
 Concernant le client , il ne peut ni gérer ni avoir la main sur la gestion des utilisateurs
+# captures des Besoins 
+# la page du login
 
+<p>
 
+<img src="images/login.png" width="250" height="200">
 
-
+</p>
 
 
 # Critères de notation
