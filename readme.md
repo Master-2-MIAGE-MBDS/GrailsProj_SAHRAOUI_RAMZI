@@ -30,6 +30,7 @@ HTML,CSS (front-end)
 Intellij (IDE de travail)
 #
 Spring Security
+
 # Besoins fonctionnels 
 
 On est concernés par 3 utilisateurs qui pourront avoir 3 rôles différents respectivement:
@@ -39,7 +40,12 @@ Apres effectuer son login , l’administrateur peut  Créer ,gérer ,Visualiser 
 alors il peut accéder à chaque annonce à partir d’un tableau qui les regroupe tous (chaque annonce avec l’utilisateur associé) ,
 puis il peut appliquer toute opération voulue du CRUD , il peut également modifier une annonce pour ajouter plus d’illustrations bien sur avec leurs images qui vont être affichées par la suite dans le tableau des annonces après l’actualisation ,
 Concernant le client , il ne peut ni gérer ni avoir la main sur la gestion des utilisateurs
+
+Point de plus : On peut switcher à tout moment l'utilisateur connecté et qui s'affiche en haut 
+de page comme current user avec son rôle
+
 # captures des Besoins 
+
 # la page du login
 
 <p>
