@@ -5,7 +5,7 @@ Etudiant : RAMZI Mouad :smile:
 
 # Objectifs
 Une platforme qui a comme but d’administrer les annonces, les modifier, les supprimer , 
-en les associant des illustrations sur les quelles on peut appliquer la meme chose c'est à dire tout Operation de CRUD
+en les associant des illustrations sur les quelles on peut appliquer la meme chose c'est à dire toute Operation de CRUD
 
 # Versions
 Version de Grails : 3.3.8
