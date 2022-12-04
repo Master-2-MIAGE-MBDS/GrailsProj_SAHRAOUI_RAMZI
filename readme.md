@@ -55,7 +55,7 @@ Concernant le client , il ne peut ni gérer ni avoir la main sur la gestion des 
 
 # les utilisateurs
 
-# créer un user 
+
 
 <p>
 
@@ -76,6 +76,7 @@ Concernant le client , il ne peut ni gérer ni avoir la main sur la gestion des 
 <img src="images/users.jpeg" width="1280" height="595">
 
 </p>
+
 
 # créer une Annonce.
 
