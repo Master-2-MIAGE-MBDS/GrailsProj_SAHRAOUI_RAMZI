@@ -55,6 +55,15 @@ Concernant le client , il ne peut ni gérer ni avoir la main sur la gestion des 
 
 # les utilisateurs
 
+# créer un user 
+
+<p>
+
+<img src="images/create-user.jpeg" width="1280" height="595">
+
+</p>
+
+
 <p>
 
 <img src="images/show-user.jpeg" width="1280" height="595">
@@ -68,7 +77,29 @@ Concernant le client , il ne peut ni gérer ni avoir la main sur la gestion des 
 
 </p>
 
+# créer une Annonce
 
+<p>
+
+<img src="images/create-annonce.jpeg" width="1280" height="595">
+
+</p>
+
+# lister les Annonces
+
+<p>
+
+<img src="images/liste-annonces.jpeg" width="1280" height="595">
+
+</p>
+
+# Illustration
+
+<p>
+
+<img src="images/show-illustration.jpeg" width="1280" height="595">
+
+</p>
 # Critères de notation
 - **Y a t'il un readme utile et complet ?**
 - Est ce que le code métier est correct, respect des bonnes pratiques, code propre ?
