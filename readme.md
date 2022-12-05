@@ -54,13 +54,7 @@ de page comme current user
 
 </p>
 
-# la page HOME
-
-<p>
-
-<img src="images/home.jpeg" width="871" height="1280">
-
-</p>
+ 
 
 # les utilisateurs
 
